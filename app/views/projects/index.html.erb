@@ -1,0 +1,38 @@
+
+<h1> Project is created</h1>
+<h2>this is the index page</h2>
+Project Count:
+<%=@projects_count%>
+<h3>Project List</h3>
+<%=link_to 'Add Project', new_project_path()%>
+<%=link_to 'Top Projects', top_hits_projects_path()%>
+<table>
+	<tr>
+		<td style="color:red" colspan="2">Project Name</td>
+		<td   style="color:red" colspan="2">Abstract</td>
+	</tr>
+
+<% @projects.each do |project|%>
+	<tr>
+		<td colspan="2">
+		<%=project.title%>
+		</td>
+		<td colspan="2">
+		<%=project.abstract%>
+		</td>
+		<td colspan="2">
+		<%=link_to 'Edit', edit_project_path(project.id)%>
+		</td>
+		<td colspan="2">
+		<%=link_to 'Delete', project_path(project.id), method: 'delete', data: { confirm: 'Are you sure you want to delete?' } %>
+		</td>
+		<td colspan="2">
+		<%=link_to 'Show', project_path(project.id)%>
+		</td>
+	</tr>
+	<%end%>
+	
+</table>
+
+
+

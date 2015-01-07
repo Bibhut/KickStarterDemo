@@ -50,7 +50,14 @@ KickStarter::Application.routes.draw do
   # just remember to delete public/index.html.
   # root :to => 'welcome#index'
 
-  resources :projects
+  root :to => 'projects#index'
+  resources :projects do
+    collection do
+      get :top_hits
+    end
+
+  end
+
 
   # See how all your routes lay out with "rake routes"
 

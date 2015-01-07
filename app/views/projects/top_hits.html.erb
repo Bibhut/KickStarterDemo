@@ -1,0 +1,26 @@
+<table>
+	<tr>
+		<td style="color:red" colspan="2">Project Name</td>
+		<td   style="color:red" colspan="2">Abstract</td>
+		<td   style="color:red" colspan="2">Description</td>
+		<td   style="color:red" colspan="2">Budget</td>
+	</tr>
+
+<% @projects.each do |project|%>
+	<tr>
+		<td colspan="2">
+		<%=project.title%>
+		</td>
+		<td colspan="2">
+		<%=project.abstract%>
+		</td>
+		<td colspan="2">
+		<%=project.description%>
+		</td>
+		<td colspan="2">
+		<%=project.budget%>
+		</td>
+	</tr>
+	<%end%>
+	
+</table>
